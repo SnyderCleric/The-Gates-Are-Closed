@@ -1,0 +1,186 @@
+Unhandled exception: page fault on read access to 0x10005a90 in 32-bit code (0x10005a90).
+Register dump:
+ CS:0023 SS:002b DS:002b ES:002b FS:0063 GS:006b
+ EIP:10005a90 ESP:0081da28 EBP:0081fd18 EFLAGS:00010246(  R- --  I  Z- -P- )
+ EAX:0040169c EBX:00000000 ECX:00000000 EDX:00000000
+ ESI:00000000 EDI:00000000
+Stack dump:
+0x0081da28:  004016a5 7b853ad0 00000000 7b8ae000
+0x0081da38:  00000000 00000000 00000000 00000000
+0x0081da48:  00000000 00000000 00000000 00000000
+0x0081da58:  00000000 00000000 00000000 00000000
+0x0081da68:  00000000 00000000 00000000 00000000
+0x0081da78:  00000000 00000000 00000000 00000000
+Backtrace:
+=>0 0x10005a90 (0x0081fd18)
+  1 0x00401b36 in game (+0x1b35) (0x0081fe40)
+  2 0x7b85a3ec call_process_entry+0xb() in kernel32 (0x0081fe58)
+  3 0x7b85b3da ExitProcess+0xfe9() in kernel32 (0x0081fe88)
+  4 0x7bc7703c call_thread_func_wrapper+0xb() in ntdll (0x0081fea8)
+  5 0x7bc79e5d call_thread_func+0xfc() in ntdll (0x0081ffa8)
+  6 0x7bc7701a RtlRaiseException+0x21() in ntdll (0x0081ffc8)
+  7 0x7bc4d277 call_dll_entry_point+0x756() in ntdll (0x0081ffe8)
+  8 0xf75d633d wine_call_on_stack+0x1c() in libwine.so.1 (0x00000000)
+  9 0xf75d64a0 wine_switch_to_stack+0x1f() in libwine.so.1 (0xffa5e048)
+  10 0x7bc528d7 LdrInitializeThunk+0x336() in ntdll (0xffa5e0a8)
+  11 0x7b861019 __wine_kernel_init+0x888() in kernel32 (0xffa5f218)
+  12 0x7bc52e33 __wine_process_init+0x152() in ntdll (0xffa5f288)
+  13 0xf75d3dff wine_init+0x30e() in libwine.so.1 (0xffa5f2e8)
+  14 0x7bf00d42 main+0x81() in <wine-loader> (0xffa5f738)
+  15 0xf73eb637 __libc_start_main+0xf6() in libc.so.6 (0x00000000)
+0x10005a90: addb	%al,0x0(%eax)
+Modules:
+Module	Address			Debug info	Name (117 modules)
+PE	  400000-  412000	Export          game
+ELF	797ff000-7b800000	Deferred        libnvidia-glcore.so.384.111
+ELF	7b800000-7ba54000	Dwarf           kernel32<elf>
+  \-PE	7b810000-7ba54000	\               kernel32
+ELF	7bc00000-7bcda000	Dwarf           ntdll<elf>
+  \-PE	7bc10000-7bcda000	\               ntdll
+ELF	7bf00000-7bf04000	Dwarf           <wine-loader>
+ELF	7c911000-7c933000	Deferred        dmsynth<elf>
+  \-PE	7c920000-7c933000	\               dmsynth
+ELF	7c933000-7c949000	Deferred        midimap<elf>
+  \-PE	7c940000-7c949000	\               midimap
+ELF	7c949000-7ca5f000	Deferred        libasound.so.2
+ELF	7ca5f000-7ca8e000	Deferred        winealsa<elf>
+  \-PE	7ca70000-7ca8e000	\               winealsa
+ELF	7ca8e000-7cab9000	Deferred        dmusic<elf>
+  \-PE	7ca90000-7cab9000	\               dmusic
+ELF	7cab9000-7cb00000	Deferred        dmime<elf>
+  \-PE	7cac0000-7cb00000	\               dmime
+ELF	7cc11000-7cc3f000	Deferred        dmloader<elf>
+  \-PE	7cc20000-7cc3f000	\               dmloader
+ELF	7cc83000-7ccaf000	Deferred        libvorbis.so.0
+ELF	7ccaf000-7ccb8000	Deferred        libogg.so.0
+ELF	7ccb8000-7ccce000	Deferred        libgpg-error.so.0
+ELF	7ccce000-7cd43000	Deferred        libpcre.so.3
+ELF	7cd43000-7cd5c000	Deferred        libresolv.so.2
+ELF	7cd5c000-7cde8000	Deferred        libvorbisenc.so.2
+ELF	7cde8000-7ce48000	Deferred        libflac.so.8
+ELF	7ce48000-7ce65000	Deferred        libgcc_s.so.1
+ELF	7ce65000-7cf14000	Deferred        libgcrypt.so.20
+ELF	7cf14000-7cf3a000	Deferred        liblzma.so.5
+ELF	7cf3a000-7cf60000	Deferred        libselinux.so.1
+ELF	7cf60000-7cf69000	Deferred        librt.so.1
+ELF	7cf69000-7cfe2000	Deferred        libsndfile.so.1
+ELF	7cfe2000-7d070000	Deferred        libsystemd.so.0
+ELF	7d070000-7d0ca000	Deferred        libdbus-1.so.3
+ELF	7d0ca000-7d152000	Deferred        libpulsecommon-8.0.so
+ELF	7d152000-7d1ac000	Deferred        libpulse.so.0
+ELF	7d1ba000-7d1d3000	Deferred        msacm32<elf>
+  \-PE	7d1c0000-7d1d3000	\               msacm32
+ELF	7d1d3000-7d1fb000	Deferred        winepulse<elf>
+  \-PE	7d1e0000-7d1fb000	\               winepulse
+ELF	7d1fb000-7d242000	Deferred        dsound<elf>
+  \-PE	7d200000-7d242000	\               dsound
+ELF	7d79f000-7d7a6000	Deferred        libasyncns.so.0
+ELF	7d7a6000-7d7b2000	Deferred        libjson-c.so.2
+ELF	7d7b2000-7d7d4000	Deferred        mmdevapi<elf>
+  \-PE	7d7c0000-7d7d4000	\               mmdevapi
+ELF	7dad9000-7dbf1000	Deferred        libgl.so.1
+ELF	7dbf8000-7dc02000	Deferred        libwrap.so.0
+ELF	7dc02000-7dc18000	Deferred        winejoystick<elf>
+  \-PE	7dc10000-7dc18000	\               winejoystick
+ELF	7dc18000-7dd36000	Deferred        opengl32<elf>
+  \-PE	7dc30000-7dd36000	\               opengl32
+ELF	7dd36000-7de68000	Deferred        wined3d<elf>
+  \-PE	7dd40000-7de68000	\               wined3d
+ELF	7de68000-7df95000	Deferred        oleaut32<elf>
+  \-PE	7de80000-7df95000	\               oleaut32
+ELF	7e006000-7e00b000	Deferred        libnvidia-tls.so.384.111
+ELF	7e00b000-7e07e000	Deferred        ddraw<elf>
+  \-PE	7e010000-7e07e000	\               ddraw
+ELF	7e07e000-7e0a3000	Deferred        iphlpapi<elf>
+  \-PE	7e080000-7e0a3000	\               iphlpapi
+ELF	7e0a3000-7e0be000	Deferred        wsock32<elf>
+  \-PE	7e0b0000-7e0be000	\               wsock32
+ELF	7e0be000-7e0f3000	Deferred        uxtheme<elf>
+  \-PE	7e0c0000-7e0f3000	\               uxtheme
+ELF	7e0f3000-7e127000	Deferred        ws2_32<elf>
+  \-PE	7e100000-7e127000	\               ws2_32
+ELF	7e127000-7e21c000	Deferred        comctl32<elf>
+  \-PE	7e130000-7e21c000	\               comctl32
+ELF	7e21c000-7e246000	Deferred        msacm32<elf>
+  \-PE	7e220000-7e246000	\               msacm32
+ELF	7e246000-7e2fe000	Deferred        winmm<elf>
+  \-PE	7e250000-7e2fe000	\               winmm
+ELF	7e2fe000-7e37a000	Deferred        rpcrt4<elf>
+  \-PE	7e310000-7e37a000	\               rpcrt4
+ELF	7e37a000-7e4a9000	Deferred        ole32<elf>
+  \-PE	7e390000-7e4a9000	\               ole32
+ELF	7e5f7000-7e5fe000	Deferred        libxfixes.so.3
+ELF	7e5fe000-7e60a000	Deferred        libxcursor.so.1
+ELF	7e60a000-7e61d000	Deferred        libxi.so.6
+ELF	7e61d000-7e621000	Deferred        libxcomposite.so.1
+ELF	7e621000-7e62e000	Deferred        libxrandr.so.2
+ELF	7e62e000-7e63a000	Deferred        libxrender.so.1
+ELF	7e63a000-7e641000	Deferred        libxxf86vm.so.1
+ELF	7e641000-7e645000	Deferred        libxinerama.so.1
+ELF	7e645000-7e64c000	Deferred        libxdmcp.so.6
+ELF	7e64c000-7e650000	Deferred        libxau.so.6
+ELF	7e650000-7e676000	Deferred        libxcb.so.1
+ELF	7e676000-7e7c1000	Deferred        libx11.so.6
+ELF	7e7c1000-7e7d6000	Deferred        libxext.so.6
+ELF	7e7fd000-7e88a000	Deferred        winex11<elf>
+  \-PE	7e810000-7e88a000	\               winex11
+ELF	7e8e8000-7e912000	Deferred        libexpat.so.1
+ELF	7e912000-7e95b000	Deferred        libfontconfig.so.1
+ELF	7e95b000-7e986000	Deferred        libpng12.so.0
+ELF	7e986000-7e9a1000	Deferred        libz.so.1
+ELF	7e9a1000-7ea51000	Deferred        libfreetype.so.6
+ELF	7ea78000-7eae4000	Deferred        advapi32<elf>
+  \-PE	7ea80000-7eae4000	\               advapi32
+ELF	7eae4000-7ebfb000	Deferred        gdi32<elf>
+  \-PE	7eaf0000-7ebfb000	\               gdi32
+ELF	7ebfb000-7ed49000	Deferred        user32<elf>
+  \-PE	7ec10000-7ed49000	\               user32
+ELF	7ed49000-7ed5c000	Deferred        libnss_files.so.2
+ELF	7ed5c000-7ed69000	Deferred        libnss_nis.so.2
+ELF	7ed69000-7ed84000	Deferred        libnsl.so.1
+ELF	7ef84000-7efd9000	Deferred        libm.so.6
+ELF	7efe7000-7f000000	Deferred        version<elf>
+  \-PE	7eff0000-7f000000	\               version
+ELF	f73ce000-f73d3000	Deferred        libdl.so.2
+ELF	f73d3000-f7589000	Dwarf           libc.so.6
+ELF	f7589000-f75a6000	Deferred        libpthread.so.0
+ELF	f75c2000-f75cc000	Deferred        libnss_compat.so.2
+ELF	f75cd000-f7782000	Dwarf           libwine.so.1
+ELF	f7783000-f77a8000	Deferred        ld-linux.so.2
+ELF	f77ab000-f77ac000	Deferred        [vdso].so
+Threads:
+process  tid      prio (all id:s are in hex)
+0000000e services.exe
+	0000001f    0
+	0000001e    0
+	00000019    0
+	00000018    0
+	00000016    0
+	00000014    0
+	00000010    0
+	0000000f    0
+00000012 winedevice.exe
+	0000001d    0
+	0000001a    0
+	00000017    0
+	00000013    0
+0000001b plugplay.exe
+	00000021    0
+	00000020    0
+	0000001c    0
+00000022 explorer.exe
+	00000024    0
+	00000023    0
+00000025 (D) K:\compressed\Oliver's Great Adventure\Game.exe
+	0000002d   15
+	0000002c    0
+	0000002a   15
+	00000029    0
+	00000028    0
+	00000027   15
+	00000026    0 <==
+System information:
+    Wine build: wine-1.6.2
+    Platform: i386 (WOW64)
+    Host system: Linux
+    Host version: 4.4.0-112-generic
